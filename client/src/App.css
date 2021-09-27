@@ -1,21 +1,21 @@
 .container {
-  max-width: 1140px;
-  margin: auto;
+    max-width: 1140px;
+    margin: auto;
 }
 
 .app-prefecture-list {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .app-prefecture-item {
-  flex: calc(100%/6) 0;
-  text-align: left;
+    flex: calc(100% / 6) 0;
+    text-align: left;
 }
 
 .app-prefecture-item label:hover {
-  cursor: pointer;
-  opacity: 0.6;
+    cursor: pointer;
+    opacity: 0.6;
 }
