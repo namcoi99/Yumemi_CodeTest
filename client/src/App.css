@@ -41,11 +41,50 @@ body {
 
 /* Responsive */
 
+/* Iphone 6, 7, 8 */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container > h2 {
+        text-align: center;
+    }
+
+    .app-prefecture-list {
+        padding-left: 1rem;
+    }
+
+    .app-prefecture-item {
+        flex: calc(100% / 4) 0;
+        margin: .5rem 0;
+    }
+
+    .app-linechart {
+        width: 100%;
+    }
+}
+
 /* Iphone X */
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
     .container {
         width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container > h2 {
+        text-align: center;
+    }
+
+    .app-prefecture-list {
+        padding-left: 1rem;
     }
 
     .app-prefecture-item {
