@@ -72,9 +72,11 @@ function App() {
 
   // Component to show list of prefectures
   const prefecturesList = prefectures.map((item) => (
-    <div className="app-prefectures-item" key={item.prefCode}>
-      <input type="checkbox" name={item.prefName} id={item.prefCode} onClick={() => onSelectPref(item)} />
-      {item.prefName}
+    <div className="app-prefecture-item" key={item.prefCode}>
+      <label htmlFor={item.prefCode}>
+        <input type="checkbox" name={item.prefName} id={item.prefCode} onClick={() => onSelectPref(item)} />
+        {item.prefName}
+      </label>
     </div>
   ));
 
@@ -109,7 +111,7 @@ function App() {
     <div className="App">
       <div className="container">
         <h2>都道府県</h2>
-        <div className="app-prefectures-list">
+        <div className="app-prefecture-list">
           {prefecturesList}
         </div>
         {renderLineChart}

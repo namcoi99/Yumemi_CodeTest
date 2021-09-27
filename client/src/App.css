@@ -3,13 +3,19 @@
   margin: auto;
 }
 
-.app-prefectures-list {
+.app-prefecture-list {
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.app-prefectures-item {
+.app-prefecture-item {
   flex: calc(100%/6) 0;
+  text-align: left;
+}
+
+.app-prefecture-item label:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
