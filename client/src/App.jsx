@@ -8,8 +8,9 @@ import {
   YAxis,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts'
+import randDarkColor from './helpers/util'
 import axios from './axios'
 
 function App() {
@@ -78,25 +79,6 @@ function App() {
     }
   }
 
-  const randDarkColor = () => {
-    var lum = -0.25
-    var hex = String(
-      '#' + Math.random().toString(16).slice(2, 8).toUpperCase()
-    ).replace(/[^0-9a-f]/gi, '')
-    if (hex.length < 6) {
-      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2]
-    }
-    var rgb = '#',
-      c,
-      i
-    for (i = 0; i < 3; i++) {
-      c = parseInt(hex.substr(i * 2, 2), 16)
-      c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16)
-      rgb += ('00' + c).substr(c.length)
-    }
-    return rgb
-  }
-
   // Component to show list of prefectures
   const prefecturesList = prefectures.map((item) => (
     <div className="app-prefecture-item" key={item.prefCode}>
@@ -131,34 +113,28 @@ function App() {
         top: 40,
         bottom: 40,
         left: 40,
-        right: 40
+        right: 40,
       }}
     >
       {prefLines}
-      <CartesianGrid
-        stroke="#ccc"
-        strokeDasharray="5 5" />
+      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
       <XAxis
         padding={{ right: 60 }}
         dataKey="year"
         label={{
           value: '年度',
-          position: 'insideBottomRight'
+          position: 'insideBottomRight',
         }}
       />
       <YAxis
         padding={{ top: 40 }}
         label={{
           value: '人口数',
-          position: 'insideTopLeft'
+          position: 'insideTopLeft',
         }}
       />
       <Tooltip />
-      <Legend
-        verticalAlign="top"
-        align="right"
-        layout="vertical"
-      />
+      <Legend verticalAlign="top" align="right" layout="vertical" />
     </LineChart>
   )
 
@@ -172,16 +148,17 @@ function App() {
         <h1 className="app-title">都道府県の人口数</h1>
         <h2>都道府県</h2>
         <div className="app-prefecture-list">{prefecturesList}</div>
-        {prefectures.find(pref => pref.selected) ? (
+        {prefectures.find((pref) => pref.selected) ? (
           <div className="app-linechart">
             <ResponsiveContainer width="100%" height="100%">
               {renderLineChart}
             </ResponsiveContainer>
           </div>
         ) : (
-            <div style={{fontStyle:'italic'}}>*都道府県を選択してください。*</div>
+          <div style={{ fontStyle: 'italic' }}>
+            *都道府県を選択してください。*
+          </div>
         )}
-
       </div>
     </div>
   )
