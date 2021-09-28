@@ -12,7 +12,7 @@ function App() {
                     <Route exact path="/">
                         <KeyPage />
                     </Route>
-                    <Route path="/home">
+                    <Route exact path="/home">
                         <Home />
                     </Route>
                 </Switch>
