@@ -12,6 +12,64 @@ body {
     text-align: center;
 }
 
+/* Key Page */
+
+.app-key-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgb(119, 62, 211), rgb(139, 112, 202));
+}
+
+.app-key-card {
+    padding: 20px 30px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.3);
+}
+
+.app-form {
+    width: 300px;
+    height: 150px;
+    margin: 20px 0;
+    display: block;
+    text-align: center;
+}
+
+.app-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.app-form-checkbox {
+    cursor: pointer;
+    user-select: none;
+}
+
+.app-form-checkbox input {
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.app-form-btn {
+    margin-top: 20px;
+    padding: 12px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 255, 0.8);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}
+
+.app-form-btn:hover {
+    opacity: 0.8;
+}
+
+/* Home Page */
+
 .app-prefecture-list {
     display: flex;
     justify-content: flex-start;
@@ -25,8 +83,7 @@ body {
     margin: 0.5rem 0;
 }
 
-.app-prefecture-item label:hover,
-.app-prefecture-item input:hover {
+.app-prefecture-item label:hover, .app-prefecture-item input:hover {
     cursor: pointer;
     opacity: 0.6;
 }
@@ -42,29 +99,23 @@ body {
 /* Responsive */
 
 /* Iphone 6, 7, 8 */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
     .container {
         width: 100%;
         padding: 0;
         margin: 0;
     }
-
-    .container > h2 {
+    .container>h2 {
         text-align: center;
     }
-
     .app-prefecture-list {
         padding-left: 1rem;
     }
-
     .app-prefecture-item {
         flex: calc(100% / 4) 0;
-        margin: .5rem 0;
+        margin: 0.5rem 0;
     }
-
     .app-linechart {
         width: 100%;
     }
@@ -78,54 +129,48 @@ body {
         padding: 0;
         margin: 0;
     }
-
-    .container > h2 {
+    .container>h2 {
         text-align: center;
     }
-
     .app-prefecture-list {
         padding-left: 1rem;
     }
-
     .app-prefecture-item {
         flex: calc(100% / 4) 0;
         margin: 0.5rem 0;
     }
-
     .app-linechart {
         width: 100%;
     }
 }
 
 /* Ipad Pro 12.9" */
+
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
     .container {
         width: 100%;
     }
-
     .app-prefecture-item {
         flex: calc(100% / 5) 0;
         margin: 0.5rem 0;
         font-size: 1.4rem;
     }
-
     .app-linechart {
         width: 100%;
     }
 }
 
 /* iPad 1, 2, Mini and Air  */
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .container {
         width: 100%;
     }
-
     .app-prefecture-item {
         flex: calc(100% / 5) 0;
         margin: 0.5rem 0;
         font-size: 1.2rem;
     }
-
     .app-linechart {
         width: 100%;
     }
