@@ -17,30 +17,30 @@ const Home = () => {
     const [chartData, setChartData] = useState([])
 
     // Call API to get list of prefectures
-  const getPrefectures = () => {
-    axios
-      .get('prefectures', {
-        headers: {
-          'X-API-KEY': localStorage.getItem('apiKey'),
-        },
-      })
-      .then((response) => {
-        console.log(response)
-        if (!response.data.message) {
-          const prefList = response.data.result
-          // Add a selected attribute to each prefecture item to know whether it is selected or not
-          prefList.forEach((item) => {
-            item.selected = false
-          })
-          setPrefectures(prefList)
-        } else {
-            alert('APIキーは使用できません')
-            localStorage.removeItem('apiKey')
-            window.location.href = '/'
-        }
-      })
-      .catch((error) => console.log(error))
-  }
+    const getPrefectures = () => {
+        axios
+            .get('prefectures', {
+                headers: {
+                    'X-API-KEY': localStorage.getItem('apiKey'),
+                },
+            })
+            .then((response) => {
+                console.log(response)
+                if (!response.data.message) {
+                    const prefList = response.data.result
+                    // Add a selected attribute to each prefecture item to know whether it is selected or not
+                    prefList.forEach((item) => {
+                        item.selected = false
+                    })
+                    setPrefectures(prefList)
+                } else {
+                    alert('APIキーは使用できません')
+                    localStorage.removeItem('apiKey')
+                    window.location.href = '/'
+                }
+            })
+            .catch((error) => console.log(error))
+    }
 
     const checkApiKey = () => {
         if (!localStorage.getItem('apiKey')) {
@@ -51,7 +51,7 @@ const Home = () => {
     useEffect(() => {
         checkApiKey()
         getPrefectures()
-    },[])
+    }, [])
 
     // Add received population data to show on line chart
     const addChartData = (pref, popPerYear) => {
