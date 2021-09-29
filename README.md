@@ -1,6 +1,6 @@
 ﻿# Yumemi_CodeTest
- A simple app created with ReactJS that shows population distributed by prefecture in Japan.<br />
- Data retrieved by sending API request to [RESAS API](https://opendata.resas-portal.go.jp/).
+**A simple app created with ReactJS that shows population distributed by prefecture in Japan.<br />
+ Data retrieved by sending API request to [RESAS API](https://opendata.resas-portal.go.jp/).**
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
